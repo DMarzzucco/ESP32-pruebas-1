@@ -39,20 +39,13 @@ void setup()
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
-    Serial.println(".");
-    Serial.println("..");
-    Serial.println("...");
-    Serial.println("....");
-    Serial.println(".....");
-    Serial.println("......");
-    Serial.println(".....");
-    Serial.println("....");
-    Serial.println("...");
-    Serial.println("..");
-    Serial.println(".");
+    Serial.print(".");
   }
-
-  Serial.println(WiFi.localIP());
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: " + WiFi.localIP().toString());
+  Serial.println("Chip ID: " + String(ESP.getChipId()));
+  Serial.println("CPU Frequency: " + String(ESP.getCpuFreqMHz()) + " MHz");
 
   server.on("/", handleRoot);
 

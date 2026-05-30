@@ -1,3 +1,4 @@
+````cpp
 #include <Arduino.h>
 
 #define LED 2
@@ -15,3 +16,4 @@ void loop() {
   Serial.println("Adios");
   delay(2000);
 }
+````
